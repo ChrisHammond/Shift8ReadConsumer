@@ -1,0 +1,70 @@
+﻿
+if exists (select * from dbo.sysobjects where id = object_id(N'DF_{objectQualifier}Shift8Read_ConsumerUrls_datecreated'))
+ALTER TABLE {databaseOwner}{objectQualifier}Shift8Read_ConsumerUrls
+	DROP CONSTRAINT DF_{objectQualifier}Shift8Read_ConsumerUrls_datecreated
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Shift8Read_ConsumerUrls ADD CONSTRAINT
+	DF_{objectQualifier}Shift8Read_ConsumerUrls_datecreated DEFAULT (getutcdate()) FOR datecreated
+GO
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spUpdateConsumerUrl]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spUpdateConsumerUrl]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spUpdateConsumerUrl]
+	@id int
+	, @name nvarchar(50)
+	, @url nvarchar(255)
+	, @userid int
+	, @approved bit
+	, @autoapproved bit
+	, @lastchecked datetime
+as
+
+update {databaseOwner}[{objectQualifier}Shift8Read_ConsumerUrls]
+set [name] = @name
+	,[url] = @url
+	, [lastupdated] = GETUTCDATE()
+	,[approved] = @approved
+	,[autoapproved] = @autoapproved
+	,[lastchecked] = @lastchecked
+where id = @id
+
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spAddConsumerUrl]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spAddConsumerUrl]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spAddConsumerUrl]
+	@name nvarchar(50)
+	, @url nvarchar(255)
+	, @userid int
+	, @approved bit
+	, @autoapproved bit
+	, @portalid int
+as
+
+INSERT INTO {databaseOwner}[{objectQualifier}Shift8Read_ConsumerUrls]
+           ([name]
+           ,[url]
+           ,[userid]
+           ,[lastupdated]
+           ,[approved]
+           ,[autoapproved]
+           ,[portalid])
+     VALUES
+           (@name
+           ,@url
+           ,@userid
+           ,GETUTCDATE()
+           ,@approved
+           ,@autoapproved
+           ,@portalid)
+           
+GO
+

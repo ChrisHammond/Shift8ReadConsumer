@@ -1,0 +1,577 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Shift8ReadConsumer</name>
+    </assembly>
+    <members>
+        <member name="T:Shift8Read.Dnn.Consumer.ConsumerUrlInfo">
+            -----------------------------------------------------------------------------
+            <summary>
+            The Controller class for Shift8ReadConsumer
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Shift8Read.Dnn.Consumer.ConsumerUrlController">
+            -----------------------------------------------------------------------------
+            <summary>
+            The Controller class for Shift8ReadConsumer
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Shift8Read.Dnn.Consumer.ConsumerUrlController.ExportModule(System.Int32)">
+            -----------------------------------------------------------------------------
+            <summary>
+            ExportModule implements the IPortable ExportModule Interface
+            </summary>
+            <param name="ModuleID">The Id of the module to be exported</param>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Shift8Read.Dnn.Consumer.ConsumerUrlController.ImportModule(System.Int32,System.String,System.String,System.Int32)">
+            -----------------------------------------------------------------------------
+            <summary>
+            ImportModule implements the IPortable ImportModule Interface
+            </summary>
+            <param name="ModuleID">The Id of the module to be imported</param>
+            <param name="Content">The content to be imported</param>
+            <param name="Version">The version of the module to be imported</param>
+            <param name="UserId">The Id of the user performing the import</param>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Shift8Read.Dnn.Consumer.ConsumeUrlsScheduler">
+            -----------------------------------------------------------------------------
+            <summary>
+            The Controller class for MemberSegment
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Shift8Read.Dnn.Consumer.ConsumerCategoryKeywordInfo">
+            -----------------------------------------------------------------------------
+            <summary>
+            The Controller class for Shift8ReadConsumerCategoryKeywordInfo
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Shift8Read.Dnn.Consumer.ConsumerCategoryKeywordController">
+            -----------------------------------------------------------------------------
+            <summary>
+            The Controller class for Shift8ReadConsumer
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Shift8Read.Dnn.Consumer.ConsumerCategoryKeywordController.ExportModule(System.Int32)">
+            -----------------------------------------------------------------------------
+            <summary>
+            ExportModule implements the IPortable ExportModule Interface
+            </summary>
+            <param name="ModuleID">The Id of the module to be exported</param>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Shift8Read.Dnn.Consumer.ConsumerCategoryKeywordController.ImportModule(System.Int32,System.String,System.String,System.Int32)">
+            -----------------------------------------------------------------------------
+            <summary>
+            ImportModule implements the IPortable ImportModule Interface
+            </summary>
+            <param name="ModuleID">The Id of the module to be imported</param>
+            <param name="Content">The content to be imported</param>
+            <param name="Version">The version of the module to be imported</param>
+            <param name="UserId">The Id of the user performing the import</param>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Shift8Read.Dnn.Consumer.ViewConsumerCategoryKeyword">
+            -----------------------------------------------------------------------------
+            <summary>
+            The ViewShift8ReadConsumer class displays the content
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Shift8Read.Dnn.Consumer.ViewConsumerCategoryKeyword.Page_Load(System.Object,System.EventArgs)">
+            -----------------------------------------------------------------------------
+            <summary>
+            Page_Load runs when the control is loaded
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.ViewConsumerCategoryKeyword.gvConsumerUrls">
+            <summary>
+            gvConsumerUrls control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.ViewConsumerCategoryKeyword.lnkAddUrl">
+            <summary>
+            lnkAddUrl control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:Shift8Read.Dnn.Consumer.EditCategoryKeyword">
+            -----------------------------------------------------------------------------
+            <summary>
+            The EditShift8ReadConsumer class is used to manage content
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Shift8Read.Dnn.Consumer.EditCategoryKeyword.Page_Load(System.Object,System.EventArgs)">
+            -----------------------------------------------------------------------------
+            <summary>
+            Page_Load runs when the control is loaded
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditCategoryKeyword.pnlUrlEdit">
+            <summary>
+            pnlUrlEdit control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditCategoryKeyword.lblId">
+            <summary>
+            lblId control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditCategoryKeyword.lblKeyword">
+            <summary>
+            lblKeyword control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditCategoryKeyword.txtKeyword">
+            <summary>
+            txtKeyword control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditCategoryKeyword.lblCategoryId">
+            <summary>
+            lblCategoryId control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditCategoryKeyword.ddlCategory">
+            <summary>
+            ddlCategory control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditCategoryKeyword.lbSubmit">
+            <summary>
+            lbSubmit control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditCategoryKeyword.lbDelete">
+            <summary>
+            lbDelete control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditCategoryKeyword.pnlMessage">
+            <summary>
+            pnlMessage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditCategoryKeyword.lblMessage">
+            <summary>
+            lblMessage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:Shift8Read.Dnn.Consumer.Data.DataProvider">
+            -----------------------------------------------------------------------------
+            <summary>
+            An abstract class for the data access layer
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Shift8Read.Dnn.Consumer.Data.SqlDataProvider">
+            -----------------------------------------------------------------------------
+            <summary>
+            SQL Server implementation of the abstract DataProvider class
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Shift8Read.Dnn.Consumer.EditConsumerUrl">
+            -----------------------------------------------------------------------------
+            <summary>
+            The EditShift8ReadConsumer class is used to manage content
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.pnlUrlEdit">
+            <summary>
+            pnlUrlEdit control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.lblId">
+            <summary>
+            lblId control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.lblLastChecked">
+            <summary>
+            lblLastChecked control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.lblName">
+            <summary>
+            lblName control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.txtName">
+            <summary>
+            txtName control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.lblUrl">
+            <summary>
+            lblUrl control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.txtUrl">
+            <summary>
+            txtUrl control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.lblBaseWebsiteUrl">
+            <summary>
+            lblBaseWebsiteUrl control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.txtBaseWebsiteUrl">
+            <summary>
+            txtBaseWebsiteUrl control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.pnlAdmin">
+            <summary>
+            pnlAdmin control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.lblUserId">
+            <summary>
+            lblUserId control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.txtUserId">
+            <summary>
+            txtUserId control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.lblApproved">
+            <summary>
+            lblApproved control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.chkApproved">
+            <summary>
+            chkApproved control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.lblAutoApproved">
+            <summary>
+            lblAutoApproved control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.chkAutoApproved">
+            <summary>
+            chkAutoApproved control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.lblCategoryId">
+            <summary>
+            lblCategoryId control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.ddlCategory">
+            <summary>
+            ddlCategory control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.lblStripHTML">
+            <summary>
+            lblStripHTML control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.chkStripHTML">
+            <summary>
+            chkStripHTML control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.lblDefaultThumbnail">
+            <summary>
+            lblDefaultThumbnail control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.txtDefaultThumbnail">
+            <summary>
+            txtDefaultThumbnail control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.lbSubmit">
+            <summary>
+            lbSubmit control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.lbDelete">
+            <summary>
+            lbDelete control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.pnlMessage">
+            <summary>
+            pnlMessage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.EditConsumerUrl.lblMessage">
+            <summary>
+            lblMessage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="M:Shift8Read.Dnn.Consumer.EditConsumerUrl.Page_Load(System.Object,System.EventArgs)">
+            -----------------------------------------------------------------------------
+            <summary>
+            Page_Load runs when the control is loaded
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Shift8Read.Dnn.Consumer.Settings">
+            -----------------------------------------------------------------------------
+            <summary>
+            The Settings class manages Module Settings
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.Settings.lblModuleId">
+            <summary>
+            lblModuleId control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.Settings.ddlModules">
+            <summary>
+            ddlModules control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.Settings.lblCategory">
+            <summary>
+            lblCategory control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.Settings.ddlCategory">
+            <summary>
+            ddlCategory control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="M:Shift8Read.Dnn.Consumer.Settings.LoadSettings">
+            -----------------------------------------------------------------------------
+            <summary>
+            LoadSettings loads the settings from the Database and displays them
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Shift8Read.Dnn.Consumer.Settings.UpdateSettings">
+            -----------------------------------------------------------------------------
+            <summary>
+            UpdateSettings saves the modified settings to the Database
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Shift8Read.Dnn.Consumer.ViewConsumerUrls">
+            -----------------------------------------------------------------------------
+            <summary>
+            The ViewShift8ReadConsumer class displays the content
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.ViewConsumerUrls.rblApproved">
+            <summary>
+            rblApproved control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.ViewConsumerUrls.gvConsumerUrls">
+            <summary>
+            gvConsumerUrls control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Shift8Read.Dnn.Consumer.ViewConsumerUrls.lnkAddUrl">
+            <summary>
+            lnkAddUrl control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="M:Shift8Read.Dnn.Consumer.ViewConsumerUrls.Page_Load(System.Object,System.EventArgs)">
+            -----------------------------------------------------------------------------
+            <summary>
+            Page_Load runs when the control is loaded
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+    </members>
+</doc>

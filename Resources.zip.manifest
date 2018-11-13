@@ -1,0 +1,140 @@
+﻿<dotnetnuke type="ResourceFile" version="5.0">
+  <files>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>EditCategoryKeyword.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>EditConsumerUrl.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>Settings.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>ViewConsumerCategoryKeyword.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>ViewConsumerUrls.ascx.resx</name>
+    </file>
+    <file>
+      <path>Components/</path>
+      <name>ConsumerCategoryKeywordController.cs</name>
+    </file>
+    <file>
+      <path>Components/</path>
+      <name>ConsumerCategoryKeywordInfo.cs</name>
+    </file>
+    <file>
+      <path>Components/</path>
+      <name>ConsumerUrlController.cs</name>
+    </file>
+    <file>
+      <path>Components/</path>
+      <name>ConsumerUrlInfo.cs</name>
+    </file>
+    <file>
+      <path>Components/</path>
+      <name>ConsumeUrlsScheduler.cs</name>
+    </file>
+    <file>
+      <path>Data/</path>
+      <name>DataProvider.cs</name>
+    </file>
+    <file>
+      <path>Properties/</path>
+      <name>AssemblyInfo.cs</name>
+    </file>
+    <file>
+      <path>Providers/DataProviders/SqlDataProvider/</path>
+      <name>SqlDataProvider.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>EditCategoryKeyword.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>EditCategoryKeyword.ascx.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>EditCategoryKeyword.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>EditConsumerUrl.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>EditConsumerUrl.ascx.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>EditConsumerUrl.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>Settings.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>Settings.ascx.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>Settings.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>SettingsBase.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>Shift8ReadConsumer.build</name>
+    </file>
+    <file>
+      <path />
+      <name>Shift8ReadConsumer.csproj</name>
+    </file>
+    <file>
+      <path />
+      <name>Shift8ReadConsumer.sln</name>
+    </file>
+    <file>
+      <path />
+      <name>Shift8ReadConsumer_VS2008.sln</name>
+    </file>
+    <file>
+      <path />
+      <name>Shift8ReadModuleBase.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>ViewConsumerCategoryKeyword.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>ViewConsumerCategoryKeyword.ascx.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>ViewConsumerCategoryKeyword.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>ViewConsumerUrls.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>ViewConsumerUrls.ascx.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>ViewConsumerUrls.ascx.designer.cs</name>
+    </file>
+  </files>
+</dotnetnuke>

@@ -1,0 +1,149 @@
+﻿
+if not exists(select * from sysobjects so join syscolumns sc on (so.id = sc.id) where so.[Name] = '{objectQualifier}Shift8Read_ConsumerUrls' and sc.[Name] = 'categoryId')
+ALTER TABLE {databaseOwner}{objectQualifier}Shift8Read_ConsumerUrls ADD
+	categoryId int NULL
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spUpdateConsumerUrl]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spUpdateConsumerUrl]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spUpdateConsumerUrl]
+	@id int
+	, @name nvarchar(50)
+	, @url nvarchar(255)
+	, @userid int
+	, @approved bit
+	, @autoapproved bit
+	, @lastchecked datetime
+	, @categoryId int
+as
+
+update {databaseOwner}[{objectQualifier}Shift8Read_ConsumerUrls]
+set [name] = @name
+	,[url] = @url
+	, [lastupdated] = GETUTCDATE()
+	,[approved] = @approved
+	,[autoapproved] = @autoapproved
+	,[lastchecked] = @lastchecked
+	,[categoryId] = @categoryId
+where id = @id
+
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spAddConsumerUrl]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spAddConsumerUrl]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spAddConsumerUrl]
+	@name nvarchar(50)
+	, @url nvarchar(255)
+	, @userid int
+	, @approved bit
+	, @autoapproved bit
+	, @portalid int
+	, @categoryId int
+as
+
+INSERT INTO {databaseOwner}[{objectQualifier}Shift8Read_ConsumerUrls]
+           ([name]
+           ,[url]
+           ,[userid]
+           ,[lastupdated]
+           ,[approved]
+           ,[autoapproved]
+           ,[portalid]
+           ,[categoryId])
+     VALUES
+           (@name
+           ,@url
+           ,@userid
+           ,GETUTCDATE()
+           ,@approved
+           ,@autoapproved
+           ,@portalid
+           ,@categoryId)
+           
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrl]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrl]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrl]
+	@id int
+as
+select 
+	id
+	, name
+	, url
+	, userid
+	, datecreated
+	, lastupdated
+	, lastchecked
+	, approved
+	, autoapproved
+	, portalId
+	, categoryId
+from
+	{databaseOwner}[{objectQualifier}Shift8Read_ConsumerUrls]
+where 
+	id = @id
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrlsForUser]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrlsForUser]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrlsForUser]
+	@userid int
+	, @portalid int
+as
+select 
+	id
+	, name
+	, url
+	, userid
+	, datecreated
+	, lastupdated
+	, lastchecked
+	, approved
+	, autoapproved
+	, portalid
+	, categoryId
+from
+	{databaseOwner}[{objectQualifier}Shift8Read_ConsumerUrls]
+where 
+	userId = @userid
+	and portalid = @portalid
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrls]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrls]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrls]
+	@approved bit
+	, @portalid int
+as
+select 
+	id
+	, name
+	, url
+	, userid
+	, datecreated
+	, lastupdated
+	, lastchecked
+	, approved
+	, autoapproved
+	, portalid
+	, categoryId
+from
+	{databaseOwner}[{objectQualifier}Shift8Read_ConsumerUrls]
+where 
+	portalid = @portalid
+	and approved = @approved
+GO
+

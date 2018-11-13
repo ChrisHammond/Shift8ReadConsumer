@@ -1,0 +1,106 @@
+﻿
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_ConsumerCategoryKeywords]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}Shift8Read_ConsumerCategoryKeywords]
+GO
+
+CREATE TABLE {databaseOwner}[{objectQualifier}Shift8Read_ConsumerCategoryKeywords](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[keyword] [nvarchar](50) NOT NULL,
+	[categoryId] [int] NOT NULL,
+	[portalId] [int] NOT NULL,
+ CONSTRAINT [PK_dnn_Shift8Read_ConsumerCategoryKeywords] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spAddConsumerCategoryKeyword]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spAddConsumerCategoryKeyword]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spAddConsumerCategoryKeyword]
+	@keyword nvarchar(50)
+	, @categoryid int
+	, @portalId int
+as
+
+INSERT INTO {databaseOwner}[{objectQualifier}Shift8Read_ConsumerCategoryKeywords]
+           ([keyword]
+           ,[categoryid]
+           ,[portalId])
+     VALUES
+           (@keyword
+           ,@categoryid
+           ,@portalId)           
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerCategoryKeywords]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerCategoryKeywords]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerCategoryKeywords]
+	@portalId int
+as
+select 
+	id
+	, keyword
+	, categoryId
+	, portalId
+from
+	{databaseOwner}[{objectQualifier}Shift8Read_ConsumerCategoryKeywords]
+where 
+	portalId = @portalId
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerCategoryKeyword]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerCategoryKeyword]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerCategoryKeyword]
+	@id int
+as
+select 
+	id
+	, keyword
+	, categoryId
+	, portalId
+from
+	{databaseOwner}[{objectQualifier}Shift8Read_ConsumerCategoryKeywords]
+where 
+	id = @id
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spUpdateConsumerCategoryKeyword]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spUpdateConsumerCategoryKeyword]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spUpdateConsumerCategoryKeyword]
+	@id int
+	, @keyword nvarchar(50)
+	, @categoryId int
+as
+
+update {databaseOwner}[{objectQualifier}Shift8Read_ConsumerCategoryKeywords]
+set [keyword] = @keyword
+	,[categoryId] = @categoryId
+where id = @id
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spDeleteConsumerCategoryKeyword]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spDeleteConsumerCategoryKeyword]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spDeleteConsumerCategoryKeyword]
+	@id int
+as
+delete from
+	{databaseOwner}[{objectQualifier}Shift8Read_ConsumerCategoryKeywords]
+where 
+	id = @id
+GO
+
+

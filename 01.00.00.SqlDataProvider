@@ -1,0 +1,199 @@
+﻿
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_ConsumerUrls]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}Shift8Read_ConsumerUrls]
+GO
+
+
+if not exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}Shift8Read_ConsumerUrls') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+CREATE TABLE {databaseOwner}{objectQualifier}Shift8Read_ConsumerUrls
+	(
+	id int NOT NULL IDENTITY (1, 1),
+	name nvarchar(50) NOT NULL,
+	url nvarchar(255) NOT NULL,
+	userid int NOT NULL,
+	datecreated datetime NOT NULL,
+	lastupdated datetime NULL,
+	lastchecked datetime NULL,
+	approved bit NOT NULL,
+	autoapproved bit NOT NULL,
+	portalid int NOT NULL
+	)  ON [PRIMARY]
+GO
+
+if not exists (select * from dbo.sysobjects where id = object_id(N'DF_{objectQualifier}Shift8Read_ConsumerUrls_datecreated'))
+ALTER TABLE {databaseOwner}{objectQualifier}Shift8Read_ConsumerUrls ADD CONSTRAINT
+	DF_{objectQualifier}Shift8Read_ConsumerUrls_datecreated DEFAULT GetDate() FOR datecreated
+GO
+
+if not exists (select * from dbo.sysobjects where id = object_id(N'DF_{objectQualifier}Shift8Read_ConsumerUrls_approved'))
+ALTER TABLE {databaseOwner}{objectQualifier}Shift8Read_ConsumerUrls ADD CONSTRAINT
+	DF_{objectQualifier}Shift8Read_ConsumerUrls_approved DEFAULT 0 FOR approved
+GO
+
+if not exists (select * from dbo.sysobjects where id = object_id(N'PK_{objectQualifier}Shift8Read_ConsumerUrls'))
+
+	ALTER TABLE {databaseOwner}{objectQualifier}Shift8Read_ConsumerUrls ADD CONSTRAINT
+		PK_{objectQualifier}Shift8Read_ConsumerUrls PRIMARY KEY CLUSTERED 
+		(
+		id
+		) ON [PRIMARY]
+
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spAddConsumerUrl]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spAddConsumerUrl]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spAddConsumerUrl]
+	@name nvarchar(50)
+	, @url nvarchar(255)
+	, @userid int
+	, @approved bit
+	, @autoapproved bit
+	, @portalid int
+as
+
+INSERT INTO {databaseOwner}[{objectQualifier}Shift8Read_ConsumerUrls]
+           ([name]
+           ,[url]
+           ,[userid]
+           ,[lastupdated]
+           ,[approved]
+           ,[autoapproved]
+           ,[portalid])
+     VALUES
+           (@name
+           ,@url
+           ,@userid
+           ,GetDate()
+           ,@approved
+           ,@autoapproved
+           ,@portalid)
+           
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spUpdateConsumerUrl]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spUpdateConsumerUrl]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spUpdateConsumerUrl]
+	@id int
+	, @name nvarchar(50)
+	, @url nvarchar(255)
+	, @userid int
+	, @approved bit
+	, @autoapproved bit
+	, @lastchecked datetime
+as
+
+update {databaseOwner}[{objectQualifier}Shift8Read_ConsumerUrls]
+set [name] = @name
+	,[url] = @url
+	, [lastupdated] = GetDate()
+	,[approved] = @approved
+	,[autoapproved] = @autoapproved
+	,[lastchecked] = @lastchecked
+where id = @id
+
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrl]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrl]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrl]
+	@id int
+as
+select 
+	id
+	, name
+	, url
+	, userid
+	, datecreated
+	, lastupdated
+	, lastchecked
+	, approved
+	, autoapproved
+	, portalId
+from
+	{databaseOwner}[{objectQualifier}Shift8Read_ConsumerUrls]
+where 
+	id = @id
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrlsForUser]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrlsForUser]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrlsForUser]
+	@userid int
+	, @portalid int
+as
+select 
+	id
+	, name
+	, url
+	, userid
+	, datecreated
+	, lastupdated
+	, lastchecked
+	, approved
+	, autoapproved
+	, portalid
+from
+	{databaseOwner}[{objectQualifier}Shift8Read_ConsumerUrls]
+where 
+	userId = @userid
+	and portalid = @portalid
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrls]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrls]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spGetConsumerUrls]
+	@approved bit
+	, @portalid int
+as
+select 
+	id
+	, name
+	, url
+	, userid
+	, datecreated
+	, lastupdated
+	, lastchecked
+	, approved
+	, autoapproved
+	, portalid
+from
+	{databaseOwner}[{objectQualifier}Shift8Read_ConsumerUrls]
+where 
+	portalid = @portalid
+	and approved = @approved
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Shift8Read_spDeleteConsumerUrl]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Shift8Read_spDeleteConsumerUrl]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Shift8Read_spDeleteConsumerUrl]
+	@id int
+as
+delete from
+	{databaseOwner}[{objectQualifier}Shift8Read_ConsumerUrls]
+where 
+	id = @id
+GO
+
+insert into {databaseOwner}[{objectQualifier}schedule]
+(TypeFullName, TimeLapse, TimeLapseMeasurement
+	, RetryTimeLapse, RetryTimeLapseMeasurement
+	, RetainHistoryNum, AttachToEvent, CatchUpEnabled, Enabled, ObjectDependencies)
+Values('Shift8Read.Dnn.Consumer.ConsumeUrlsScheduler, shift8readconsumer', 30, 'm', 10, 'm', 5, '', 0, 1, '')
+GO
+

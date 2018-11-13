@@ -1,0 +1,26 @@
+﻿.ConsumerUrlEdit
+{
+	width:100%;
+}
+.Wrapper
+{
+	line-height:1;
+		clear:both;
+}
+.ConsumerUrlEdit .label
+{
+	float:left;
+	width:200px;
+}
+
+.CategoryKeywordEdit .Wrapper
+{
+	width:100%;
+
+}
+
+.CategoryKeywordEdit .label
+{
+	float:left;
+	width:200px;
+}
