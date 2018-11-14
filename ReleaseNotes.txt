@@ -1,0 +1,7 @@
+﻿<pre>
+Release notes
+
+3.0.0
+-Fix for DNN 9.2 deprecated items
+-First public release
+</pre>

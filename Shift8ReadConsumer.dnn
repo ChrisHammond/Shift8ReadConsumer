@@ -1,69 +1,134 @@
-<dotnetnuke version="3.0" type="Module">
-  <folders>
-    <folder>
-      <name>Shift8ReadConsumer</name>
-      <friendlyname>Shift8ReadConsumer</friendlyname>
-      <foldername>Shift8ReadConsumer</foldername>
-      <modulename>Shift8ReadConsumer</modulename>
-      <description>Shift8ReadConsumer module</description>
-      <version>02.00.06</version>
-      <resourcefile>Resources.zip</resourcefile>
-      <modules>
-        <module>
-          <friendlyname>Shift8ReadConsumer</friendlyname>
-          <cachetime>0</cachetime>
-          <controls>
-            <control>
-              <src>DesktopModules/Shift8ReadConsumer/ViewConsumerUrls.ascx</src>
-              <type>View</type>
-              <helpurl></helpurl>
-            </control>
-            <control>
-              <key>Edit</key>
-              <title>Edit Content</title>
-              <src>DesktopModules/Shift8ReadConsumer/EditConsumerUrl.ascx</src>
-              <type>Edit</type>
-              <helpurl></helpurl>
-            </control>
-            <control>
-              <key>Settings</key>
-              <title>Shift8ReadConsumer Settings</title>
-              <src>DesktopModules/Shift8ReadConsumer/Settings.ascx</src>
-              <type>Edit</type>
-              <helpurl></helpurl>
-            </control>
-          </controls>
-        </module>
-      </modules>
-      <files>
-        <file>
-	     <name>Shift8ReadConsumer.dll</name>
-      	</file>
-        <file>
-          <name>RssToolkit.dll</name>
-        </file>
-        <file>
-          <name>01.00.00.SqlDataProvider</name>
-        </file>
-        <file>
-          <name>01.00.01.SqlDataProvider</name>
-        </file>
-        <file>
-          <name>01.00.02.SqlDataProvider</name>
-        </file>
-        <file>
-          <name>01.00.05.SqlDataProvider</name>
-        </file>
-        <file>
-          <name>02.00.01.SqlDataProvider</name>
-        </file>
-        <file>
-          <name>02.00.03.SqlDataProvider</name>
-        </file>
-        <file>
-          <name>Uninstall.SqlDataProvider</name>
-        </file>
-      </files>
-    </folder>
-  </folders>
+<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="Shift8ReadConsumer" type="Module" version="03.00.00">
+      <friendlyName>Shift8ReadConsumer</friendlyName>
+      <description>An open source module for collating content for DotNetNuke, in Engage Publish, built by Christoc.com</description>
+      <iconFile />
+      <owner>
+        <name>Chris Hammond</name>
+        <organization>Christoc.com Software Solutions</organization>
+        <url>http://www.christoc.com</url>
+        <email>modules@christoc.com</email>
+      </owner>
+      <license src="License.txt"/>
+      <releaseNotes src="ReleaseNotes.txt" />
+
+      <dependencies>
+        <dependency type="CoreVersion">09.00.01</dependency>
+        <!-- .NET 4.5 -->
+        <dependency type="type">System.Reflection.ReflectionContext</dependency>
+      </dependencies>
+
+      <components>
+        <component type="Script">
+          <scripts>
+            <basePath>DesktopModules\Shift8ReadConsumer</basePath>
+            <script type="Install">
+              <path>Providers\DataProviders\SqlDataProvider</path>
+              <name>01.00.00.SqlDataProvider</name>
+              <version>01.00.00</version>
+            </script>
+            <script type="Install">
+              <path>Providers\DataProviders\SqlDataProvider</path>
+              <name>01.00.01.SqlDataProvider</name>
+              <version>01.00.01</version>
+            </script>
+            <script type="Install">
+              <path>Providers\DataProviders\SqlDataProvider</path>
+              <name>01.00.02.SqlDataProvider</name>
+              <version>01.00.02</version>
+            </script>
+            <script type="Install">
+              <path>Providers\DataProviders\SqlDataProvider</path>
+              <name>01.00.05.SqlDataProvider</name>
+              <version>01.00.05</version>
+            </script>
+            <script type="Install">
+              <path>Providers\DataProviders\SqlDataProvider</path>
+              <name>02.00.01.SqlDataProvider</name>
+              <version>02.00.01</version>
+            </script>
+            <script type="Install">
+              <path>Providers\DataProviders\SqlDataProvider</path>
+              <name>02.00.03.SqlDataProvider</name>
+              <version>02.00.03</version>
+            </script>
+
+            <script type="UnInstall">
+              <path>Providers\DataProviders\SqlDataProvider</path>
+              <name>Uninstall.SqlDataProvider</name>
+              <version>00.00.01</version>
+            </script>
+          </scripts>
+        </component>
+
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules/Shift8ReadConsumer</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+
+        <component type="Module">
+          <desktopModule>
+            <moduleName>Shift8ReadConsumer</moduleName>
+            <foldername>Shift8ReadConsumer</foldername>
+            <businessControllerClass />
+            <supportedFeatures />
+            <moduleDefinitions>
+              <moduleDefinition>
+                <friendlyName>Shift8ReadConsumer</friendlyName>
+                <defaultCacheTime>0</defaultCacheTime>
+                <moduleControls>
+                  <moduleControl>
+                    <controlKey />
+                    <controlSrc>DesktopModules/Shift8ReadConsumer/ViewConsumerUrls.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle />
+                    <controlType>View</controlType>
+                    <iconFile />
+                    <helpUrl />
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>Edit</controlKey>
+                    <controlSrc>DesktopModules/Shift8ReadConsumer/EditConsumerUrl.ascx</controlSrc>
+                    <supportsPartialRendering>True</supportsPartialRendering>
+                    <controlTitle>Edit Content</controlTitle>
+                    <controlType>Edit</controlType>
+                    <iconFile />
+                    <helpUrl />
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>Settings</controlKey>
+                    <controlSrc>DesktopModules/Shift8ReadConsumer/Settings.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle>Shift8ReadConsumer Settings</controlTitle>
+                    <controlType>Edit</controlType>
+                    <iconFile />
+                    <helpUrl />
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+                </moduleControls>
+              </moduleDefinition>
+            </moduleDefinitions>
+          </desktopModule>
+        </component>
+        <component type="Assembly">
+          <assemblies>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>Shift8ReadConsumer.dll</name>
+            </assembly>
+            <assembly>
+              <name>RssToolkit.dll</name>
+            </assembly>
+          </assemblies>
+        </component>
+      </components>
+    </package>
+  </packages>
 </dotnetnuke>

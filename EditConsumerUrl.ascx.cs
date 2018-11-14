@@ -21,7 +21,7 @@ using System.Web.UI.WebControls;
 using DotNetNuke.Entities.Host;
 using DotNetNuke.Entities.Users;
 using DotNetNuke.Security.Roles;
-
+using DotNetNuke.Entities.Controllers;
 
 namespace Shift8Read.Dnn.Consumer
 {
@@ -185,7 +185,9 @@ namespace Shift8Read.Dnn.Consumer
                 cuc.AddConsumerUrl(cui);
                 //add the user to the authors role
 
-                string authorRole = HostSettings.GetHostSetting("PublishAuthorRole" + this.PortalId);
+                //string authorRole = HostSettings.GetHostSetting("PublishAuthorRole" + this.PortalId);
+                string authorRole = HostController.Instance.GetString("PublishAuthorRole" + this.PortalId);
+                    //HostSettings.GetHostSetting("PublishAuthorRole" + this.PortalId);
                 if (authorRole != string.Empty)
                 {
                     RoleController rc = new RoleController();
@@ -230,7 +232,8 @@ namespace Shift8Read.Dnn.Consumer
 
                 cuc.UpdateConsumerUrl(cui);
 
-                string authorRole = HostSettings.GetHostSetting("PublishAuthorRole" + this.PortalId);
+                //string authorRole = HostSettings.GetHostSetting("PublishAuthorRole" + this.PortalId);
+                string authorRole = HostController.Instance.GetString("PublishAuthorRole" + this.PortalId);
                 if (authorRole != string.Empty)
                 {
                     RoleController rc = new RoleController();
